@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+    <style>
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Regular.otf') format('opentype');
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Regular-Italic.otf') format('opentype');
+        font-weight: 300;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Medium-Italic.otf') format('woff');
+        font-weight: 500;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Reader Regular';
+        src: url('https://s3.amazonaws.com/k-connect/fonts/Reader-Bold-Italic.otf') format('opentype');
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      /* TYPOGRAPHY */
+      h1, h2, h3, h4, h5, h6, p {color: #1e1e1e;}
+      a {color: #ffaf00; font-weight: 500; font-size: 15px;}
+      p, h1, h2, h3, h4 {font-weight: 300; font-size: 15px;}
+      h1 {font-size: 48px;}
+      h2 {font-size: 36px;}
+      h3 {font-size: 30px;}
+      h4 {font-size: 24px;}
+      p {margin-top: 0; margin-bottom: 1em;}
+      a:hover {color: #f19700;}
+      .title {
+        font-size: 30px;
+        border-bottom: 1px solid #d8dbdf;
+        line-height: 31px;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        display: block;
+        text-align: center;
+      }
+
+      /* COLORS */
+      .yellow {background: #ffaf00;}
+      .dark-yellow {background: #f19700;}
+      .black {background: #ffaf00;}
+      .blue-1 {background: #929aa5;}
+      .blue-2 {background: #c1c6cc;}
+      .blue-3 {background: #d8dce0;}
+      .gray-1 {background: #e5e5e5;}
+      .gray-2 {background: #f2f2f2;}
+      .white {background: #f2f2f2;}
+
+      /* END COLORS */
+      body {font-family: "Reader Regular", Arial, 'Helvetica Neue', Helvetica, sans-serif; background: #f1f1f1; font-size: 15px; font-weight: 300;}
+      .wrapper {display: block; margin: 0 auto; width: 290px; padding: 0 15px;}
+
+      /* BUTTONS */
+      .button-primary {background: #ffaf01; font-weight: 700; text-transform: uppercase; font-size: 15px; color: #fff; border: 0; -webkit-appearance: none; padding: 10px 18px 9px; border-bottom-color: #d27c15; min-width: 100px; border: 1px solid #db9623; margin: 45px auto 0; display: block;}
+      .reset-password-button {width: 100%; padding: 14px 35px 13px;}
+      .button-primary:active, .button-primary:hover {background: #f19700;}
+
+      /* INPUTS */
+      label {font-weight: 300;}
+      .field {padding-bottom: 15px;}
+      sup {line-height: 0; margin-left: 2px;}
+      .field.last {padding-bottom: 0;}
+      textarea:focus, input:focus, button:focus {outline: 0;}
+      input[type="text"], input[type="email"], input[type="password"], select, .sbHolder, textarea {background-color: #fff; border: 1px solid #d8dbdf; -moz-border-radius: 18px; -webkit-border-radius: 18px; border-radius: 18px; font-size: 15px; max-width: 100%; width: 250px; display: block; margin: 5px 0; height: 31px; line-height: 25px; line-height: 1; color: #1e1e1e; padding: 0 20px 0 20px; position: relative; font-weight: 300; -webkit-appearance: none;}
+      .logo {display: block; margin: 20px auto 30px;}
+      * {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+      #messages {text-align: center;color: #fe4747; margin-bottom: 20px;}
+      #messages p {color: #fe4747;margin-bottom: 0.4em;}
+      #fields {display: none;}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+     <img class="logo" src="https://www.keurig.com/_ui/desktop/common/images/nav/logo-circle.png" alt="Keurig">
+     <h1 class="title">Reset Password</h1>
+      <div id="messages"></div>  
+      <div id="fields">
+        <div class="field">
+          <label>Email<sup>*</sup></label>
+          <input id="email" type="email">
+        </div>
+        <div class="field">
+          <label>Password<sup>*</sup></label>
+          <input id="pass1" type="password">
+        </div>
+        <div class="field last">
+          <label>Confirm Password<sup>*</sup></label>
+          <input id="pass2" type="password">
+        </div>
+        <div class="field">
+          <button id="submit" class="button-primary reset-password-button">Update password</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://s3.amazonaws.com/k-connect/reset-password.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </body>
+</html>
+
