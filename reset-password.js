@@ -4,7 +4,7 @@
     for (var i = 0; i < params.length; ++i) {
       var v = params[i];
       if ('t' === v.charAt(0) && '=' === v.charAt(1)) {
-        v = v.substr(2).replace(/\+/g, " ");
+        v = v.substr(2).replace(/\/+/g, "");
         return decodeURIComponent(v);
       }
     }
@@ -15,7 +15,7 @@
     var url = "https://api.spark.io/v1/password";
     $.post(url, data)
       .done(function () {
-        messages.html("<p>Password successfully changed! Open the Keurig Connect app to login.</p>");
+        messages.html("<p class='success'>Password successfully changed! Open the Keurig Connect app to login.</p>");
       })
       .fail(function (err) {
         console.log("API call failed: " + JSON.stringify(err));
