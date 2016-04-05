@@ -12,10 +12,10 @@
   };
 
   var changePassword = function (data) {
-    var url = "https://api.spark.io/v1/password";
+    var url = "https://api.particle.io/v1/password";
     $.post(url, data)
       .done(function () {
-        messages.html("<p class='success'>Password successfully changed! Open the Keurig Connect app to login.</p>");
+        messages.html("<p class='success'>Password successfully changed!</p>");
       })
       .fail(function (err) {
         console.log("API call failed: " + JSON.stringify(err));
